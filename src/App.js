@@ -34,28 +34,28 @@ function App() {
                 </Button>
 
 
-                <Dropdown>
+                <Dropdown onSelect={function(evt){setServer(evt)}} >
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                         サーバー選択
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">デポ01</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">デポ02</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">デポ03</Dropdown.Item>
+                        <Dropdown.Item eventKey="1">デポ01</Dropdown.Item>
+                        <Dropdown.Item eventKey="2">デポ02</Dropdown.Item>
+                        <Dropdown.Item eventKey="3">デポ03</Dropdown.Item>
                         <Dropdown.Divider/>
 
-                        <Dropdown.Item href="#/action-4">ケン01</Dropdown.Item>
-                        <Dropdown.Item href="#/action-5">ケン02</Dropdown.Item>
-                        <Dropdown.Item href="#/action-6">ケン03</Dropdown.Item>
+                        <Dropdown.Item eventKey="4">ケン01</Dropdown.Item>
+                        <Dropdown.Item eventKey="5">ケン02</Dropdown.Item>
+                        <Dropdown.Item eventKey="6">ケン03</Dropdown.Item>
                         <Dropdown.Divider/>
 
-                        <Dropdown.Item href="#/action-7">イシ01</Dropdown.Item>
-                        <Dropdown.Item href="#/action-8">イシ02</Dropdown.Item>
-                        <Dropdown.Item href="#/action-9">イシ03</Dropdown.Item>
+                        <Dropdown.Item eventKey="7">イシ01</Dropdown.Item>
+                        <Dropdown.Item eventKey="8">イシ02</Dropdown.Item>
+                        <Dropdown.Item eventKey="9">イシ03</Dropdown.Item>
                         <Dropdown.Divider/>
 
-                        <Dropdown.Item href="#/action-10">ケレ01</Dropdown.Item>
+                        <Dropdown.Item eventKey="10">ケレ01</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
 
