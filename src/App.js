@@ -21,7 +21,7 @@ function App() {
         }
 
         fetchData();
-    }, [sv, server]);
+    }, [server]);
 
     return (
         <div className="App">
