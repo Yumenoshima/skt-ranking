@@ -1,40 +1,35 @@
 import React, {useEffect, useState} from 'react';
 import Table from 'react-bootstrap/Table';
 import Dropdown from 'react-bootstrap/Dropdown';
-import Button from 'react-bootstrap/Button';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
 function App() {
 
-    let servername = <h1>イシ02</h1>;
-    const [count, setCount] = useState(0);
-    const [server, setServer] = useState(1 );
+    let sv = ["デポ01", "デポ02", "デポ03", "ケン01", "ケン02", "ケン03", "イシ01", "イシ02", "イシ03", "ケレ01"]
+    const [serverName, setServerName] = useState('デポ01')
+    const [server, setServer] = useState(1);
     const [data, setData] = useState([]);
-    useEffect(async () => {
-        const result = await axios(
-            'https://script.google.com/macros/s/AKfycbzIq4GFUccHevknzrlGmv2K-W5oIco_yVBq6Q92rmxiHI_zTwoa/exec?server=' + server,
-        );
-        setData(result.data);
-    }, []);
+    useEffect(() => {
+        async function fetchData() {
+            const result = await axios(
+                'https://script.google.com/macros/s/AKfycbzIq4GFUccHevknzrlGmv2K-W5oIco_yVBq6Q92rmxiHI_zTwoa/exec?server=' + server,
+            );
+            setData(result.data);
+            setServerName(sv[server-1]);
+        }
+
+        fetchData();
+    }, [sv, server]);
 
     return (
         <div className="App">
             <header className="App-header">
 
-                <div>
-                    <p>You clicked {count} times</p>
-                    <Button onClick={() => setCount(count + 1)}>
-                        Click me
-                    </Button>
-                </div>
-                <Button onClick={() => setServer(2)}>
-                    server{server}
-                </Button>
-
-
-                <Dropdown onSelect={function(evt){setServer(evt)}} >
+                <Dropdown onSelect={function (evt) {
+                    setServer(evt)
+                }}>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                         サーバー選択
                     </Dropdown.Toggle>
@@ -59,7 +54,8 @@ function App() {
                     </Dropdown.Menu>
                 </Dropdown>
 
-                {servername}
+                <h1>{serverName}</h1>
+
                 <img src={logo} className="App-logo" alt="logo"/>
 
 
