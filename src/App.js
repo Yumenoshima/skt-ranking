@@ -33,6 +33,12 @@ function App() {
                 <Container>
                     <Row>
                         <Col>
+                            <img src={logo} className="App-logo" alt="logo"/>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
 
                             <Dropdown onSelect={function (evt) {
                                 setServer(evt)
@@ -70,11 +76,6 @@ function App() {
                     </Row>
                     <Row>
                         <Col>
-                            <img src={logo} className="App-logo" alt="logo"/>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
                             <Table striped bordered hover variant="dark">
                                 <thead>
                                 <tr>
@@ -98,11 +99,11 @@ function App() {
                         <Col>
                             <a
                                 className="App-link"
-                                href="https://twitter.com/Yumenoshima1"
+                                href="https://github.com/Yumenoshima/skt-ranking"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                リネージュM記者クラブ
+                                リネージュM記者クラブ・ランキング
                             </a>
                         </Col>
                     </Row>
